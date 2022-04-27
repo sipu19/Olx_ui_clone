@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLx chat box</title>
+    <link rel="stylesheet" href="olx_chat_box.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <body>
+        <!-- ========================== *navbar* =================================== -->
+        <div class="header">
+        <div class="navbar">
+        <img src="Olx.logo/olx_logo.svg">
+        <div class="country_select" id="country">
+        <div class="select">
+        <p id="text">Select Your Country</p>
+        <i class="fa-solid fa-chevron-down" id="moving"></i>
+    </div>    
+        <ul class="option_box" id="list">
+        <li class="option" onclick="myfunction('USA')" >
+        <i class="fa-solid fa-location-dot"></i>
+        <p>USA</p>
+        <li class="option"  onclick="myfunction('PAKISTAN')">
+        <i class="fa-solid fa-location-dot "></i>
+        <p>PAKISTAN</p>
+        <li class="option" onclick="myfunction('NEW YORK')">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>NEW YORK</p>
+        </li>
+        <li class="option" onclick="myfunction('CANADA')">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>CANADA</p>
+        <li class="option" onclick="myfunction('INDIA')">
+        <i class="fa-solid fa-location-dot"></i>
+       <p>INDIA</p>
+    </ul>
+    </div>
+    
+    <div class="search_box">
+        <input type="text" class="searchclass" id="searchid" placeholder="Find Cars ,mobile phone and more....">
+        <p><i class="fa-solid fa-magnifying-glass"></i></p>
+    </div>
+    <div class="language">
+        <p id="eng_tag"> ENGLISH</p>
+        <ul class="hin_eng">
+            <li onclick="languageolx('हिन्दी')">हिन्दी</li>
+            <li onclick=" languageolx('ENGLISH')">ENGLISH</li>
+        </ul>
+    </div>
+    <div class="messege">
+        <i class="fa-regular fa-comment"></i>
+    </div>
+    <div class="messege">
+        <i class="fa-regular fa-bell"></i>
+    </div>
+    
+    <div class="mylogo">
+        <div class="my_img" id="crzy_img_id">
+        <img src=" https://media-exp1.licdn.com/dms/image/C4E03AQES8_DWNQZlHg/profile-displayphoto-shrink_200_200/0/1631709790579?e=1656547200&v=beta&t=XAYXJq7XldAvW0G3lzwvocOEB55db07QJCj4ARDoGb8" >
+    
+        </div>
+    </div>
+    <div class="dropdown" id="dropdownid">
+    <div class="name_img">
+    <img src=" https://media-exp1.licdn.com/dms/image/C4E03AQES8_DWNQZlHg/profile-displayphoto-shrink_200_200/0/1631709790579?e=1656547200&v=beta&t=XAYXJq7XldAvW0G3lzwvocOEB55db07QJCj4ARDoGb8" >
+    <p>Manohara Behera</p>
+    </div>
+    <ul>
+        <li>
+            <i class="fa-regular fa-user"></i>
+            <p>My Acount</p>
+        </li>
+        <li>
+            <i class="fa-solid fa-box"></i>
+            <p>My Order</p>
+             </li>
+             <hr>
+        <li>
+            <i class="fa-regular fa-circle-question"></i>
+            <p>Help</p>
+        </li>
+        <li>
+            <i class="fa-solid fa-gear"></i>
+            <p>Setting</p>
+        </li>
+        <li>
+        <i class="fa-solid fa-right-from-bracket"></i>
+            <p>Log Out </p>
+            </li>
+            <hr>
+        
+    </ul>
+    
+    
+    </div>
+    <div class="selling_page">
+        <button>
+    <i class="fa-solid fa-plus"></i>
+    <p>SELL</p>
+        </button>
+    </div>
+    </div>
+    </div>
+    <div class="chat_box">
+        <div class="heading_chatbox">
+            <div class="img_name_chat">
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQHe0-zRlOSTIA/profile-displayphoto-shrink_200_200/0/1645889694293?e=1656547200&v=beta&t=mKDK0UqxFxKBuR0IY2eVxETiufhAPbpspgBZXLsuyPU">
+            <h2>DIGBIJAY</h2>
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="see_chat"> 
+            <h3 id="messege"> </h3>
+        </div>
+        <div class="send_messege">
+            <input type="text" placeholder="Type a Message" id="text_messege">
+            <input type="text" placeholder="Type a Message" id="demo_messege">
+            <i class="fa-solid fa-paper-plane" id="send_item"></i>
+        </div>
+       
+    </div>
+
+    
+</body>
+</html>
+<script>
+    let country=document.getElementById("country");
+    let moving=document.getElementById("moving");
+    let text=document.getElementById("text");
+    let list=document.getElementById("list");
+    country.addEventListener('click' ,() =>{
+    list.classList.toggle('hidden')
+    moving.classList.toggle('roted')
+    });
+    function myfunction(content){
+        text.innerHTML =content;
+    }
+    let eng_tag=document.getElementById('eng_tag');
+    let hin_eng=document.querySelector('.hin_eng');
+    let language=document.querySelector('.language');
+    language.addEventListener('click',() =>{
+    hin_eng.classList.toggle('display_div'); 
+    });
+    function languageolx(anyone){
+        eng_tag.innerHTML=anyone;
+    }
+    let crzy_img_id=document.getElementById('crzy_img_id');
+    let dropdownid=document.getElementById('dropdownid');
+    crzy_img_id.addEventListener('click' ,()=>{
+        dropdownid.classList.toggle('dropdown_block');
+    });
+
+
+
+    let send_item=document.getElementById('send_item');
+    let messege=document.getElementById('messege');
+    let text_messege=document.getElementById('text_messege');
+    let demo_messege=document.getElementById('demo_messege');
+    send_item.addEventListener('click',()=>{
+        messege.innerHTML=text_messege.value;
+        messege.style='display:block';
+        text_messege.value=demo_messege.value;
+    })
+    </script>
